@@ -1,3 +1,5 @@
+# EDID-overclock 1.3 @louzkk
+
 set -e
 
 FIRMWARE_DIR="/lib/firmware/edid"
@@ -120,7 +122,6 @@ install_edid() {
 
     echo ""
     echo "Done. Reboot to apply."
-    echo "Verify afterwards with: kscreen-doctor -o"
 }
 
 remove_edid() {

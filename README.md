@@ -3,10 +3,10 @@
 # EDID-Overclock
 **Custom EDID firmware profile**    
 
-[![Version](https://img.shields.io/badge/Version-1.0-indigo?style=for-the-badge&logo=linux&logoColor=white)](https://github.com/louzkk/edid-overclock)
-[![License](https://img.shields.io/badge/License-MIT-indigo?style=for-the-badge)](LICENSE)
-[![Discord](https://img.shields.io/badge/Discord-indigo?style=for-the-badge&logo=Discord&logoColor=white)](https://discord.gg/QJPdw2UrVt)
-[![Download](https://img.shields.io/badge/Download-indigo?style=for-the-badge&logo=Github&logoColor=white)](https://github.com/louzkk/edid-overclock/releases)
+[![Version](https://img.shields.io/badge/Version-1.0-black?style=for-the-badge&logo=linux&logoColor=white)](https://github.com/louzkk/edid-overclock)
+[![License](https://img.shields.io/badge/License-MIT-black?style=for-the-badge)](LICENSE)
+[![Discord](https://img.shields.io/badge/Discord-black?style=for-the-badge&logo=Discord&logoColor=white)](https://discord.gg/QJPdw2UrVt)
+[![Download](https://img.shields.io/badge/Download-black?style=for-the-badge&logo=Github&logoColor=white)](https://github.com/louzkk/edid-overclock/releases)
 
 </div>
 

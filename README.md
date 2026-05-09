@@ -3,7 +3,7 @@
 # EDID-Overclock
 **Custom EDID firmware profile**    
 
-[![Version](https://img.shields.io/badge/Version-1.0-black?style=for-the-badge&logo=linux&logoColor=white)](https://github.com/louzkk/edid-overclock)
+[![Version](https://img.shields.io/badge/Version-1.3-black?style=for-the-badge&logo=linux&logoColor=white)](https://github.com/louzkk/edid-overclock)
 [![License](https://img.shields.io/badge/License-MIT-black?style=for-the-badge)](LICENSE)
 [![Discord](https://img.shields.io/badge/Discord-black?style=for-the-badge&logo=Discord&logoColor=white)](https://discord.gg/QJPdw2UrVt)
 [![Download](https://img.shields.io/badge/Download-black?style=for-the-badge&logo=Github&logoColor=white)](https://github.com/louzkk/edid-overclock/releases)
@@ -12,8 +12,8 @@
 
 A shell script that installs a custom EDID firmware on Linux, enabling monitor refresh rate overclocking beyond what the panel advertises. Handles initramfs embedding, kernel parameter injection, and bootloader configuration automatically.      
 
-**Tested on my PC:** UHD 620, BOE 1920x1080, 60hz and CachyOS (Wayland)     
-**Requirements:** mkinitcpio, wxEDID and GRUB.     
+**Tested on my PC:** `UHD 620`, `BOE 1920x1080 60hz` and `CachyOS (Wayland)`     
+**Requirements:** `mkinitcpio`, `wxEDID` and `GRUB`.     
 
 its not that hard, I promise      
 

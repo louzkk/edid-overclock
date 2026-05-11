@@ -1,4 +1,4 @@
-# EDID-overclock 1.3 @louzkk
+# EDID-overclock 1.4 @louzkk
 
 set -e
 
@@ -15,7 +15,7 @@ usage() {
 die() { echo "Error: $*" >&2; exit 1; }
 
 check_root() {
-    [[ $EUID -eq 0 ]] || die "Run with sudo."
+    [[ $EUID -eq 0 ]] || die "Run with sudo"
 }
 
 detect_bootloader() {
@@ -29,7 +29,7 @@ detect_bootloader() {
 }
 
 rebuild_initramfs() {
-    echo "→ Rebuilding initramfs"
+    echo "Rebuilding initramfs"
     mkinitcpio -P
 }
 
@@ -40,13 +40,13 @@ grub_add_param() {
     else
         sed -i "s|\(GRUB_CMDLINE_LINUX_DEFAULT='[^']*\)'|\1 ${param}'|" "$GRUB_CONF"
     fi
-    echo "→ Updating grub.cfg"
+    echo "Updating grub.cfg"
     grub-mkconfig -o /boot/grub/grub.cfg
 }
 
 grub_remove_param() {
     sed -i "s| drm\.edid_firmware=[^ '\"]*||g" "$GRUB_CONF"
-    echo "→ Updating grub.cfg"
+    echo "Updating grub.cfg"
     grub-mkconfig -o /boot/grub/grub.cfg
 }
 
@@ -62,7 +62,7 @@ sd_boot_add_param() {
             else
                 sed -i "s|^\(options .*\)|\1 ${param}|" "$entry"
             fi
-            echo "→ Updated $entry"
+            echo "Updated $entry"
         fi
     done
 }
@@ -72,7 +72,7 @@ sd_boot_remove_param() {
     entries=$(find "$SYSTEMD_BOOT_ENTRIES" -name "*.conf" | head -5)
     for entry in $entries; do
         sed -i "s| drm\.edid_firmware=[^ ]*||g" "$entry"
-        echo "→ Cleaned $entry"
+        echo "Cleaned $entry"
     done
 }
 
@@ -104,15 +104,15 @@ install_edid() {
 
     [[ -f "$bin_file" ]] || die "File '$bin_file' not found."
 
-    echo "→ Copying $bin_name to $FIRMWARE_DIR/"
+    echo "Copying $bin_name to $FIRMWARE_DIR/"
     mkdir -p "$FIRMWARE_DIR"
     cp "$bin_file" "$FIRMWARE_DIR/$bin_name"
 
-    echo "→ Updating $MKINITCPIO_CONF"
+    echo "Updating $MKINITCPIO_CONF"
     initcpio_add_file "$FIRMWARE_DIR/$bin_name"
 
     local param="drm.edid_firmware=${output}:edid/${bin_name}"
-    echo "→ Adding kernel parameter: $param"
+    echo "Adding kernel parameter: $param"
     case "$bootloader" in
         grub)         grub_add_param "$param" ;;
         systemd-boot) sd_boot_add_param "$param" ;;
@@ -130,13 +130,13 @@ remove_edid() {
     local bin_name
     bin_name=$(basename "$bin_file")
 
-    echo "→ Removing kernel parameter"
+    echo "Removing kernel parameter."
     case "$bootloader" in
         grub)         grub_remove_param ;;
         systemd-boot) sd_boot_remove_param ;;
     esac
 
-    echo "→ Updating $MKINITCPIO_CONF"
+    echo "Updating $MKINITCPIO_CONF"
     initcpio_remove_file "$FIRMWARE_DIR/$bin_name"
 
     rebuild_initramfs
